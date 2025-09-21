@@ -1,0 +1,43 @@
+{
+  "name": "mafiachain-frame",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev --turbopack",
+    "build": "next build --turbopack",
+    "start": "next start",
+    "lint": "eslint",
+    "hardhat:compile": "npx hardhat compile",
+    "hardhat:test": "npx hardhat test",
+    "hardhat:deploy": "npx hardhat run src/scripts/deploy.ts --network baseSepolia",
+    "hardhat:deploy-local": "npx hardhat run src/scripts/deploy.ts --network localhost",
+    "hardhat:address": "npx hardhat run src/scripts/get-address.ts --network baseSepolia",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@neynar/nodejs-sdk": "^3.34.0",
+    "@nomicfoundation/hardhat-toolbox": "^6.1.0",
+    "@openzeppelin/contracts": "^5.4.0",
+    "@privy-io/react-auth": "^3.0.1",
+    "@upstash/redis": "^1.35.4",
+    "@vercel/og": "^0.8.5",
+    "dotenv": "^17.2.2",
+    "hardhat": "^2.26.3",
+    "next": "15.5.3",
+    "react": "19.1.0",
+    "react-dom": "19.1.0",
+    "viem": "^2.37.7",
+    "wagmi": "^2.17.1"
+  },
+  "devDependencies": {
+    "@eslint/eslintrc": "^3",
+    "@tailwindcss/postcss": "^4",
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "eslint": "^9",
+    "eslint-config-next": "15.5.3",
+    "tailwindcss": "^4",
+    "typescript": "^5"
+  }
+}
