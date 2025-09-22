@@ -1,12 +1,21 @@
 import { Redis } from '@upstash/redis';
 
-if (!process.env.UPSTASH_REDIS_URL || !process.env.UPSTASH_REDIS_TOKEN) {
+// Check if Redis config is available
+const redisUrl = process.env.UPSTASH_REDIS_URL;
+const redisToken = process.env.UPSTASH_REDIS_TOKEN;
+
+if (!redisUrl || !redisToken) {
+  console.error('Redis configuration missing. Please set UPSTASH_REDIS_URL and UPSTASH_REDIS_TOKEN in .env.local');
+  console.error('Current values:', {
+    url: redisUrl ? 'SET' : 'MISSING',
+    token: redisToken ? 'SET' : 'MISSING'
+  });
   throw new Error('Redis configuration missing. Please set UPSTASH_REDIS_URL and UPSTASH_REDIS_TOKEN');
 }
 
 export const redis = new Redis({
-  url: process.env.UPSTASH_REDIS_URL,
-  token: process.env.UPSTASH_REDIS_TOKEN,
+  url: redisUrl,
+  token: redisToken,
 });
 
 // Helper functions for Redis operations
