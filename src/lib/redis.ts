@@ -12,7 +12,7 @@ export const redis = new Redis({
 // Helper functions for Redis operations
 export const redisHelpers = {
   // Game state operations
-  async setGame(gameId: string, gameState: any, ttlSeconds = 86400) {
+  async setGame(gameId: string, gameState: unknown, ttlSeconds = 86400) {
     return await redis.setex(`game:${gameId}`, ttlSeconds, JSON.stringify(gameState));
   },
 
@@ -26,7 +26,7 @@ export const redisHelpers = {
   },
 
   // Player session operations
-  async setPlayerSession(fid: string, sessionData: any, ttlSeconds = 3600) {
+  async setPlayerSession(fid: string, sessionData: unknown, ttlSeconds = 3600) {
     return await redis.setex(`session:${fid}`, ttlSeconds, JSON.stringify(sessionData));
   },
 

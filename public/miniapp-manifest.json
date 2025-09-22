@@ -1,0 +1,15 @@
+{
+  "name": "MafiaChain",
+  "description": "9-player Mafia with ETH prizes on Farcaster",
+  "icon": "/icon-192.png",
+  "url": "https://your-domain.vercel.app/miniapp",
+  "version": "1.0.0",
+  "author": "MafiaChain Team",
+  "categories": ["games", "defi"],
+  "permissions": [
+    "cast",
+    "wallet"
+  ],
+  "supports_mobile": true,
+  "supports_desktop": true
+}

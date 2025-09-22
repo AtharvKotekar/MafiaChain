@@ -38,7 +38,7 @@ export interface GameState {
 export interface GameEvent {
   type: 'player_joined' | 'game_started' | 'phase_change' | 'player_killed' | 'player_saved' | 'game_ended';
   timestamp: number;
-  data: any;
+  data: unknown;
 }
 
 export interface FrameButton {
